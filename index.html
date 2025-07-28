@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NairaSavvy – Personal Finance & Frugal Living</title>
+  <meta name="description" content="Learn to save, invest, and live frugally in Nigeria. Budgeting tips, investment guides, and smart living strategies." />
+  <link rel="stylesheet" href="assets/css/style.min.css" />
+</head>
+<body>
+  <header>
+    <h1>NairaSavvy</h1>
+    <button id="darkToggle">🌓</button>
+  </header>
+
+  <section class="hero">
+    <h2>Smart Money Habits for Nigerians</h2>
+    <p>We teach you how to budget, save, and grow your wealth – even on a low income.</p>
+    <a href="articles.html" class="btn">Read Articles</a>
+  </section>
+
+  <section class="search-filter">
+    <form class="search-form">
+      <input type="text" placeholder="Search articles..." />
+      <select>
+        <option value="">All Categories</option>
+        <option value="budgeting">Budgeting</option>
+        <option value="saving">Saving</option>
+        <option value="investing">Investing</option>
+        <option value="frugal">Frugal Living</option>
+      </select>
+      <button type="submit">Search</button>
+    </form>
+  </section>
+
+  <section class="affiliate-block">
+    <div class="affiliate">
+      <img src="assets/img/tool1.jpg" alt="Affiliate Tool" />
+      <div>
+        <h3>Start Investing with Bamboo</h3>
+        <p>Join Bamboo and get access to US stocks. <a href="#">Sign up here →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <h2>Join Our Email List</h2>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 NairaSavvy</p>
+    <a href="privacy.html">Privacy</a> | 
+    <a href="terms.html">Terms</a>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('darkToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    });
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+    }
+  </script>
+</body>
+</html>
