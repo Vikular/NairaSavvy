@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NairaSavvy Articles – Smart Money in Nigeria</title>
+  <meta name="description" content="Read expert personal finance articles for Nigerians. Budget, save, and invest wisely with NairaSavvy tips." />
+  <link rel="stylesheet" href="assets/css/style.min.css" />
+</head>
+<body>
+  <header>
+    <h1>NairaSavvy</h1>
+    <button id="darkToggle">🌓</button>
+  </header>
+
+  <section class="search-filter">
+    <form id="searchForm" class="search-form">
+      <input type="text" id="searchInput" placeholder="Search articles..." />
+      <select id="categoryFilter">
+        <option value="">All Categories</option>
+        <option value="budgeting">Budgeting</option>
+        <option value="saving">Saving</option>
+        <option value="investing">Investing</option>
+        <option value="frugal">Frugal Living</option>
+      </select>
+    </form>
+  </section>
+
+  <section class="articles-grid" id="articlesList">
+    <article class="article-card" data-category="saving">
+      <img src="assets/img/saving.jpg" alt="Saving Money" />
+      <h2>Save ₦100k on ₦50k Salary</h2>
+      <p>How low earners in Nigeria can realistically hit big savings goals. Step-by-step guide.</p>
+      <a href="#">Read More →</a>
+    </article>
+
+    <article class="article-card" data-category="investing">
+      <img src="assets/img/investing.jpg" alt="Investing in Nigeria" />
+      <h2>Top 5 Dollar Investment Apps</h2>
+      <p>Explore platforms like Risevest, Chaka, Bamboo. Earn in USD from Nigeria.</p>
+      <a href="#">Read More →</a>
+    </article>
+
+    <article class="article-card" data-category="frugal">
+      <img src="assets/img/frugal.jpg" alt="Frugal Living" />
+      <h2>Frugal Living Hacks That Work</h2>
+      <p>Simple lifestyle tweaks that stretch your naira without sacrificing comfort.</p>
+      <a href="#">Read More →</a>
+    </article>
+
+    <article class="article-card" data-category="budgeting">
+      <img src="assets/img/budget.jpg" alt="Budget Plan" />
+      <h2>₦0-Based Budgeting for Nigerians</h2>
+      <p>A budgeting method that gives every naira a job. Especially helpful during inflation.</p>
+      <a href="#">Read More →</a>
+    </article>
+
+    <article class="article-card" data-category="saving">
+      <img src="assets/img/cowrywise.jpg" alt="Cowrywise Savings" />
+      <h2>Cowrywise vs PiggyVest: Which Is Better?</h2>
+      <p>We compare fees, interest, and flexibility between Nigeria’s top two savings platforms.</p>
+      <a href="#">Read More →</a>
+    </article>
+  </section>
+
+  <section class="affiliate-block">
+    <div class="affiliate">
+      <img src="assets/img/tool1.jpg" alt="Affiliate Tool" />
+      <div>
+        <h3>Recommended Tool</h3>
+        <p>Save smarter with <strong>PiggyVest</strong>. <a href="#">Try now →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <h2>Join Our Smart Money Tribe</h2>
+    <p>Get tips weekly to help you save, budget, and invest like a pro in Nigeria.</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 NairaSavvy</p>
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms of Use</a>
+  </footer>
+
+  <script>
+    // Dark mode toggle
+    const toggle = document.getElementById('darkToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    });
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+    }
+
+    // Real-time search + filter
+    const searchInput = document.getElementById('searchInput');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const articles = document.querySelectorAll('.article-card');
+
+    function filterArticles() {
+      const keyword = searchInput.value.toLowerCase();
+      const category = categoryFilter.value;
+
+      articles.forEach(article => {
+        const matchesText = article.innerText.toLowerCase().includes(keyword);
+        const matchesCategory = category === '' || article.dataset.category === category;
+
+        article.style.display = matchesText && matchesCategory ? 'block' : 'none';
+      });
+    }
+
+    searchInput.addEventListener('input', filterArticles);
+    categoryFilter.addEventListener('change', filterArticles);
+  </script>
+</body>
+</html>
