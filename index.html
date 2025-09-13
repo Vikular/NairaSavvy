@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naira-Savvy: Personal Finance & Frugal Living in Nigeria</title>
+    <meta name="description" content="Your ultimate guide to personal finance, smart saving, and frugal living tailored for the Nigerian economic landscape. Learn to budget, invest, and grow your wealth in Naira.">
+    <meta name="keywords" content="Naira finance, personal finance Nigeria, frugal living Nigeria, Nigerian economy, saving money Nigeria, investing Nigeria, budgeting Nigeria, wealth management Nigeria, financial advice Nigeria">
+    <link rel="canonical" href="https://www.nairasavvy.com/"> <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Basic Reset & Base Styles */
+        :root {
+            --primary-color: #006400; /* Dark Green */
+            --secondary-color: #FFD700; /* Gold */
+            --accent-color: #FF4500; /* OrangeRed */
+            --text-color: #333;
+            --light-bg: #f8f8f8;
+            --white: #ffffff;
+            --grey-border: #ddd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--grey-border);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .logo {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1600x600?text=Nigerian+Market+Background') no-repeat center center/cover; /* Replace with a relevant Nigerian image */
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 450px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Featured Content / Categories */
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .category-card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .category-card p {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Latest Articles */
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .article-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        }
+
+        .article-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 20px;
+            flex-grow: 1; /* Allows content to push footer down */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-content h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .article-content p {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 15px;
+            flex-grow: 1; /* Allows paragraph to take available space */
+        }
+
+        .article-meta {
+            font-size: 0.8em;
+            color: #888;
+            margin-top: auto; /* Pushes meta to the bottom */
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+        }
+
+        .cta-section .btn {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .cta-section .btn:hover {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-color);
+            color: var(--light-bg);
+            padding: 40px 0;
+            font-size: 0.9em;
+        }
+
+        footer .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--light-bg);
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: var(--white);
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .newsletter-form input[type="email"] {
+            width: calc(100% - 70px);
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            background-color: rgba(255,255,255,0.2);
+            color: var(--white);
+        }
+
+        .newsletter-form input[type="email"]::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .newsletter-form button {
+            width: 70px;
+            padding: 10px;
+            border: none;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+            }
+
+            .footer-col {
+                min-width: 100%;
+                text-align: center;
+            }
+
+            .footer-col h4 {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .newsletter-form {
+                display: flex;
+                justify-content: center;
+            }
+
+            .newsletter-form input[type="email"] {
+                width: 70%;
+            }
+            .newsletter-form button {
+                width: 30%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 15px;
+            }
+
+            .hero h1 {
+                font-size: 1.8em;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+
+            .section-padding {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">Naira<span>Savvy</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#articles">Articles</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Unlock Your Financial Freedom in Nigeria</h1>
+                <p>Naira-Savvy is your trusted guide to mastering personal finance and embracing frugal living, specifically tailored for the Nigerian economic landscape.</p>
+                <a href="#articles" class="btn btn-primary">Start Reading Now</a>
+                <a href="#newsletter" class="btn">Join Our Community</a>
+            </div>
+        </section>
+
+        <section id="categories" class="section-padding">
+            <div class="container">
+                <h2 class="section-title">Explore Key Financial Topics</h2>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <img src="https://via.placeholder.com/400x200?text=Budgeting" alt="Budgeting & Tracking">
+                        <div class="category-card-content">
+                            <h3>Budgeting & Tracking</h3>
+                            <p>Master the art of managing your income and expenses the Nigerian way.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://via.placeholder.com/400x200?text=Saving" alt="Smart Saving Strategies">
+                        <div class="category-card-content">
+                            <h3>Smart Saving Strategies</h3>
+                            <p>Discover effective ways to save more Naira, no matter your income level.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://via.placeholder.com/400x200?text=Investing" alt="Investing in Nigeria">
+                        <div class="category-card-content">
+                            <h3>Investing for Growth</h3>
+                            <p>Navigate the Nigerian investment landscape: stocks, real estate, and more.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://via.placeholder.com/400x200?text=Frugal+Living" alt="Frugal Living Tips">
+                        <div class="category-card-content">
+                            <h3>Frugal Living Hacks</h3>
+                            <p>Practical tips to cut costs without sacrificing quality of life in Nigeria.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="articles" class="section-padding" style="background-color: var(--white);">
+            <div class="container">
+                <h2 class="section-title">Latest Articles & Insights</h2>
+                <div class="article-grid">
+                    <div class="article-card">
+                        <img src="https://via.placeholder.com/500x300?text=Inflation+Tips" alt="Beating Inflation in Nigeria">
+                        <div class="article-content">
+                            <h3>How to Beat Inflation: A Nigerian Survival Guide</h3>
+                            <p>Practical strategies to protect your Naira from rising prices and maintain your purchasing power.</p>
+                            <div class="article-meta">July 25, 2025 | Budgeting</div>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                    <div class="article-card">
+                        <img src="https://via.placeholder.com/500x300?text=Savings+Apps" alt="Top Savings Apps Nigeria">
+                        <div class="article-content">
+                            <h3>Top 5 Savings Apps for Nigerians in 2025</h3>
+                            <p>Discover the best mobile applications to help you save diligently and earn interest on your funds.</p>
+                            <div class="article-meta">July 20, 2025 | Saving</div>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                    <div class="article-card">
+                        <img src="https://via.placeholder.com/500x300?text=Side+Hustles" alt="Side Hustles Nigeria">
+                        <div class="article-content">
+                            <h3>10 Profitable Side Hustles You Can Start in Lagos Today</h3>
+                            <p>Explore low-cost business ideas that can generate additional income streams for you.</p>
+                            <div class="article-meta">July 18, 2025 | Income</div>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                    <div class="article-card">
+                        <img src="https://via.placeholder.com/500x300?text=Investing+Basics" alt="Investing for Beginners Nigeria">
+                        <div class="article-content">
+                            <h3>Investing Basics: A Guide for Young Nigerians</h3>
+                            <p>Demystifying investments: Start your journey towards financial growth with these simple steps.</p>
+                            <div class="article-meta">July 15, 2025 | Investing</div>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="cta-section">
+            <div class="container">
+                <h2>Ready to Transform Your Finances?</h2>
+                <p>Join thousands of Nigerians already taking control of their money. Get exclusive tips, resources, and community support delivered straight to your inbox.</p>
+                <a href="#newsletter" class="btn">Sign Up for Our Newsletter</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-col">
+                <h4>About NairaSavvy</h4>
+                <p>Your dedicated platform for practical personal finance and frugal living advice, tailored for the unique Nigerian economic landscape. Empowering you to build wealth and financial stability.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#articles">Articles</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <p style="margin-top: 15px;">Email: <a href="mailto:info@nairasavvy.com">info@nairasavvy.com</a></p>
+            </div>
+            <div class="footer-col" id="newsletter">
+                <h4>Newsletter</h4>
+                <p>Get the latest financial tips and updates directly to your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 NairaSavvy. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
